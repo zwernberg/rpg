@@ -7,9 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="374.51" Width="559.314" ResizeMode="NoResize">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="234*"/>
+            <ColumnDefinition Width="319*"/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="button" Content="New Character" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Click="button_Click"/>
-        <GroupBox x:Name="Character_Stats" Header="&#xD;&#xA;Character Stats&#xD;&#xA;" HorizontalAlignment="Left" Height="223" Margin="34,100,0,0" VerticalAlignment="Top" Width="285">
-            <Label x:Name="Name" Content="Name" HorizontalAlignment="Left" Margin="10,-8,0,0" VerticalAlignment="Top"/>
+        <GroupBox x:Name="Character_Stats" Header="&#xD;&#xA;Character Stats&#xD;&#xA;" HorizontalAlignment="Left" Height="223" Margin="34,100,0,0" VerticalAlignment="Top" Width="285" Grid.ColumnSpan="2">
+            <Grid HorizontalAlignment="Left" Height="216" Margin="0,-43,-12,-4" VerticalAlignment="Top" Width="285">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" VerticalAlignment="Top" Width="61" Grid.Row="1"/>
+                <Label x:Name="label1" Content="Race" HorizontalAlignment="Left" Height="30" Margin="10,30,0,0" VerticalAlignment="Top" Width="61" Grid.Row="1"/>
+                <Label x:Name="label2" Content="Class" HorizontalAlignment="Left" Height="30" Margin="10,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61"/>
+                <Label x:Name="NameLabel" Content="" HorizontalAlignment="Left" Height="30" Margin="123,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61"/>
+                <Label x:Name="RaceLabel" Content="" HorizontalAlignment="Left" Height="30" Margin="123,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61"/>
+                <Label x:Name="ClassLabel" Content="" HorizontalAlignment="Left" Height="30" Margin="123,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61"/>
+                <Label x:Name="label3" Content="Strength&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61" Height="30"/>
+                <Label x:Name="StrengthLabel" Content="" HorizontalAlignment="Left" Margin="123,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="61"/>
+                <Label x:Name="label4" Content="Wisdom" HorizontalAlignment="Left" Margin="10,125,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="61"/>
+            </Grid>
         </GroupBox>
     </Grid>
 </Window>

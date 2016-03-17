@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using NDiceBag;
 
 namespace rpg
 {
@@ -25,6 +26,8 @@ namespace rpg
 
     public partial class NewCharacter : Window
     {
+
+        private Character _character { get; set; }
 
         public NewCharacter()
         {
@@ -51,6 +54,7 @@ namespace rpg
             CharacterClassCombo.ItemsSource = playerClasses;
             CharacterClassCombo.SelectedValuePath = "Key";
             CharacterClassCombo.DisplayMemberPath = "Value";
+            GeneratePlayer();
         }
 
         private void Window_loaded(object sender, RoutedEventArgs e)
@@ -68,8 +72,8 @@ namespace rpg
 
         private void CreateCharacter_Click(object sender, RoutedEventArgs e)
         {
-            Character hero = new Character(NameTextBox.Text, (CharacterClass)CharacterClassCombo.SelectedIndex, (Race)RaceComboBox.SelectedIndex);
-            MainWindow main = new MainWindow();
+            this._character = Character.CharacterFactory(NameTextBox.Text, _character.CharacterClass, _character.Race, _character.Strength, _character.Wisdom, _character.Health, _character.Mana);
+            MainWindow main = new MainWindow(_character);
             this.Hide();
             main.ShowDialog();
         }
@@ -77,6 +81,30 @@ namespace rpg
         private void comboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
           
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            GeneratePlayer();
+
+        }
+
+        private void GeneratePlayer()
+        {
+            string name;
+            if (string.IsNullOrWhiteSpace(NameTextBox.Text))
+            {
+                name = "";
+            }
+            else
+            {
+                name = NameTextBox.Text;
+            }
+            this._character = Character.RandomCharacterFactory("");
+            DataContext = _character;
+            RaceComboBox.SelectedValue = this._character.Race;
+            CharacterClassCombo.SelectedValue = this._character.CharacterClass;
+
         }
     }
 }

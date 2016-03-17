@@ -24,6 +24,15 @@ namespace rpg
         {
             InitializeComponent();
         }
+        public MainWindow(Character character)
+        {
+            InitializeComponent();
+            NameLabel.Content = character.Name;
+            RaceLabel.Content = character.Race;
+            ClassLabel.Content = character.CharacterClass;
+            StrengthLabel.Content = character.Strength;
+
+        }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -36,5 +45,6 @@ namespace rpg
             this.Hide();
             newCharWindow.ShowDialog();
         }
+
     }
 }
