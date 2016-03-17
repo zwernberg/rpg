@@ -72,7 +72,7 @@ namespace rpg
 
         private void CreateCharacter_Click(object sender, RoutedEventArgs e)
         {
-            this._character = Character.CharacterFactory(NameTextBox.Text, _character.CharacterClass, _character.Race, _character.Strength, _character.Wisdom, _character.Health, _character.Mana);
+            this._character = Character.CharacterFactory(NameTextBox.Text, (CharacterClass)CharacterClassCombo.SelectedIndex, (Race)RaceComboBox.SelectedIndex, _character.Strength, _character.Wisdom, _character.Health, _character.Mana);
             MainWindow main = new MainWindow(_character);
             this.Hide();
             main.ShowDialog();
