@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace rpg
+namespace Engine
 {
     public enum Race
     {
@@ -16,6 +16,11 @@ namespace rpg
         Vampire,
         Centaur
     }
-    public enum CharacterClass { Mage, Warrior };
+    public enum CharacterClass
+    {
+        Mage,
+        Warrior,
+        Claric
+    };
 
 }

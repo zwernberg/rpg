@@ -17,11 +17,11 @@
             <ColumnDefinition Width="55*"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="characterName" Content="Name" HorizontalAlignment="Left" Margin="21,9,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="characterClass" Content="Class" HorizontalAlignment="Left" Margin="21,40,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="characterRace" Content="Race" HorizontalAlignment="Left" Margin="21,71,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CharacterClassCombo" HorizontalAlignment="Left" Margin="80,44,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
+        <Label x:Name="characterClass" Content="Class" HorizontalAlignment="Left" Margin="21,66,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="characterRace" Content="Race" HorizontalAlignment="Left" Margin="21,35,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CharacterClassCombo" HorizontalAlignment="Left" Margin="80,70,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="80,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-        <ComboBox x:Name="RaceComboBox" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="80,75,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged_1"/>
+        <ComboBox x:Name="RaceComboBox" HorizontalAlignment="Left" Margin="80,39,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged_1" Grid.ColumnSpan="3"/>
         <Button x:Name="CreateCharacterBtn" Content="Accept" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="120" Click="CreateCharacter_Click" Grid.Row="1"/>
         <Button x:Name="button" Content="New Stats" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1" Click="button_Click"/>
         <Grid Margin="21,97,92,73" Grid.ColumnSpan="3" Grid.RowSpan="2">
